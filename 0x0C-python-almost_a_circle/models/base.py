@@ -67,7 +67,7 @@ class Base:
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
-                  @classmethod
+    @classmethod
     def load_from_file(cls):
         """Return a list of instances from a file."""
         class_name = cls.__name__
