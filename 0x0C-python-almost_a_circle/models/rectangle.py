@@ -64,8 +64,9 @@ class Rectangle(Base):
 
     def area(self):
         """this function to calculate rectangle area"""
-        return self.__width * self.__height
-    
+                return self.__width * self.__height
+
+    # task 5,7
     def display(self):
         """this function to that prints in stdout
         the Rectangle instance with the character #"""
@@ -74,9 +75,3 @@ class Rectangle(Base):
         for x in range(self.__height):
             print(" " * self.__x + "#" * self.__width, end="\n")
 
-               def __str__(self):
-        """this function to it returns
-        [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(
-            self.id, self.__x, self.__y, self.__width, self.__height
-        )
