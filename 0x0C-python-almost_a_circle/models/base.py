@@ -44,3 +44,25 @@ class Base:
             return []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Return an instance with all attributes already set."""
+        if cls.__name__ == "Rectangle":
+            dummy_instance = cls(1, 1)
+        elif cls.__name__ == "Square":
+            dummy_instance = cls(1)
+        else:
+            raise ValueError("Unsupported class for create method")
+        dummy_instance.update(**dictionary)
+        return dummy_instance
+
+    def update(self, *args, **kwargs):
+        """Update instance attributes with the values provided."""
+        if args:
+            attrs = ["id", "width", "height", "size", "x", "y"]
+            for attr, val in zip(attrs, args):
+                setattr(self, attr, val)
+        if kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
